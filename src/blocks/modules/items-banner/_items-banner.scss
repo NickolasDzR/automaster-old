@@ -1,0 +1,81 @@
+.items-banner {
+    width: r(80);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: $blu;
+    transition: all .3s linear;
+    padding: r(16) r(11);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+        background-color: $yel;
+        transition: all .3s linear;
+    }
+
+    .icon-mini-logo span:before {
+        font-size: r(65);
+    }
+
+    .icon-mini-logo {
+        position: absolute;
+        top: 13px;
+    }
+
+    &:hover .icon-mini-logo span:before {
+        color: $yel;
+        transition: all .5s linear;
+    }
+
+    &:hover .icon-mini-logo .path1:before {
+        color: $blu;
+        transition: all .5s linear;
+    }
+
+    .icon-mini-logo span:before {
+        transition: all .5s linear;
+    }
+
+    &:hover {
+        .icon-catalog {
+            &:before {
+                color: $blu;
+                transition: all .5s linear;
+            }
+        }
+    }
+
+    .icon-catalog {
+        &:before {
+            font-size: r(26);
+            transition: all .5s linear;
+        }
+
+        margin-right: 10px;
+        position: relative;
+        top: r(4);
+    }
+
+    &__paragraph {
+        color: $wh;
+        font-weight: 500;
+        transition: all .5s linear;
+    }
+
+    &:hover &__paragraph {
+        color: $blu;
+        transition: all .5s linear;
+    }
+
+    &__tittle {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        margin: 0 r(-28) 0 r(-40);
+        position: relative;
+    }
+}
