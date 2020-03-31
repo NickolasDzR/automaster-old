@@ -69,7 +69,8 @@
         "yargs": "~13.2.4"
     },
     "dependencies": {
-        "smart-grid": "^2.1.2"
+        "smart-grid": "^2.1.2",
+        "yarn": "^1.22.4"
     },
     "husky": {
         "hooks": {

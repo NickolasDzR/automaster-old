@@ -1,7 +1,8 @@
 @import "../items-banner/items-banner";
+@import "../items-slide/items-slide";
+@import "../navigation/navigation";
 
 header {
-    position: relaitve;
-    width: 100vw;
-    height: 100vh;
+    position: relative;
+    padding-left: r(80);
 }

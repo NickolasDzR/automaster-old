@@ -1,0 +1,102 @@
+nav {
+    padding-top: r(30);
+    position: relative;
+    z-index: 2;
+
+    .nav {
+        &__inner {
+            @include row-flex();
+            justify-content: space-between;
+        }
+
+        &__list {
+            @include col();
+            @include size(3);
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            ul li {
+                position: relative;
+                font-size: r(12);
+                line-height: r(32);
+                text-transform: uppercase;
+                display: inline-block;
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: $wh;
+                }
+            }
+            &_active:before {
+                content: '';
+                display: inline-block;
+                width: 80%;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $yel;
+                animation: border-width .3s linear;
+            }
+        }
+
+        &__contacts {
+            @include col();
+            @include size(4);
+            display: flex;
+
+            &-language {
+                padding-right: r(34);
+            }
+
+            &-number {
+                padding-left: r(34);
+                border-left: 1px solid $wh;
+            }
+
+            &-language ul li {
+                font-size: r(12);
+                line-height: r(32);
+                text-transform: uppercase;
+                display: inline-block;
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: $wh;
+                }
+                .nav__contacts-language_active {
+                    color: $yel;
+                }
+            }
+
+            &-number ul {
+                li:nth-child(1) {
+                    font-size: r(20);
+                }
+
+                li:nth-child(2) {
+                    font-size: r(12);
+                }
+
+                li {
+                    color: $wh;
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
+
+@keyframes border-width {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 80%;
+    }
+}
