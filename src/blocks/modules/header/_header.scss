@@ -1,8 +1,13 @@
 @import "../items-banner/items-banner";
 @import "../items-slide/items-slide";
 @import "../navigation/navigation";
+@import "../main-slider/main-slider";
+@import "../main-slider-bg/main-slider-bg";
 
 header {
     position: relative;
     padding-left: r(80);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

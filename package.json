@@ -27,6 +27,7 @@
         "@babel/core": "^7.4.3",
         "@babel/preset-env": "^7.4.3",
         "@babel/register": "^7.4.0",
+        "animate.css": "^3.7.2",
         "babel-eslint": "~10.0.2",
         "babel-loader": "^8.0.5",
         "bem-tools-core": "bem-tools/bem-tools-core",
@@ -64,6 +65,7 @@
         "stylelint": "^10.0.1",
         "stylelint-order": "^3.0.0",
         "stylelint-selector-bem-pattern": "^2.1.0",
+        "swiper": "^5.3.6",
         "webpack": "~4.35.0",
         "webpack-stream": "^5.2.1",
         "yargs": "~13.2.4"

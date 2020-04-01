@@ -1,0 +1,121 @@
+.main-slider {
+    .swiper-slide-active {
+        opacity: 1;
+        animation: ActiveSlideIn 1s ease-in;
+    }
+    .swiper-slide-prev {
+        opacity: 0;
+        animation: ActiveSlideIn 1s ease-in reverse;
+    }
+
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+
+    &-title {
+        overflow-x: visible;
+        width: 100%;
+    }
+
+    &__item {
+        position: relative;
+        z-index: 1;
+
+        &-inner {
+            @include col();
+            @include size(8);
+        }
+    }
+
+    &__title {
+        @include row-ib();
+
+        h2 {
+            font-size: r(64);
+            line-height: r(72);
+            color: $yel;
+        }
+
+        p {
+            font-size: r(20);
+            line-height: r(30);
+            color: $wh;
+        }
+    }
+
+    &__details {
+        position: relative;
+        width: 15.25rem;
+        margin-bottom: 10px;
+        z-index: 5;
+
+        &:hover {
+            a {
+                background-color: $yel;
+                color: $blu;
+                transition: all .3s linear;
+            }
+
+            span {
+                transition: all .3s linear;
+                background-color: $yel;
+                bottom: r(-7);
+                animation: span-bottom .3s linear;
+            }
+        }
+
+        a {
+            display: inline-block;
+            width: 100%;
+            font-weight: 600;
+            font-size: r(12);
+            background-color: $blu;
+            color: $yel;
+            padding: r(9) r(16) r(7);
+            margin: 0;
+            text-decoration: none;
+            border: none;
+            transition: all .3s linear;
+        }
+
+        span {
+            display: inline-block;
+            width: r(15);
+            height: r(15);
+            position: absolute;
+            background-color: $blu;
+            transform: rotate(45deg);
+            left: r(15);
+            bottom: r(4);
+            transition: all .3s linear;
+            z-index: -1;
+            animation: span-bottom .3s linear reverse;
+        }
+    }
+}
+
+@keyframes span-bottom {
+    0% {
+        bottom: r(4);
+    }
+
+    100% {
+        bottom: r(-7)
+    }
+}
+
+.swiper-container {
+    overflow-y: visible;
+}
+
+@keyframes ActiveSlideIn {
+    0% {
+        opacity: .4;
+        transform: scale3d(0.94, 0.94, 0.94);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
