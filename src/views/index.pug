@@ -1,17 +1,24 @@
 extends layouts/default
 include helpers/mixins
-include ../blocks/modules/header/header.pug
-include ../blocks/modules/main/main.pug
-include ../blocks/modules/footer/footer.pug
+include ../blocks/modules/items-banner/items-banner.pug
+include ../blocks/modules/items-slide/items-slide.pug
+include ../blocks/modules/navigation/navigation.pug
+include ../blocks/modules/main-slider/main-slider.pug
+include ../blocks/modules/main-slider-bg/main-slider-bg
+include ../blocks/modules/slider-controls/slider-controls
 
 block variables
 	- const title = "gulp-pug-starter"
 
 block content
 	#site-container 
-		+header
-		+main
-		+footer
+		header
+			+items-banner
+			+items-slide
+			+navigation
+			+main-slider
+			+main-slider-bg
+			+slider-controls
 
 block scripts
 	script(src="js/main.js")

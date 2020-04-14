@@ -1,0 +1,32 @@
+{
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/svg",
+    "css/flexbox",
+    "test/css/animations",
+    "test/css/flexbox",
+    "test/forms/placeholder",
+    "test/img/webp",
+    "test/es5/array",
+    "test/es5/date",
+    "test/es5/function",
+    "test/es5/object",
+    "test/es5/specification",
+    "test/es5/strictmode",
+    "test/es5/string",
+    "test/es5/syntax",
+    "test/es5/undefined",
+    "test/es6/array",
+    "test/es6/arrow",
+    "test/es6/collections",
+    "test/es6/contains",
+    "test/es6/generators",
+    "test/es6/math",
+    "test/es6/number",
+    "test/es6/object",
+    "test/es6/promises",
+    "test/es6/string"
+  ]
+}

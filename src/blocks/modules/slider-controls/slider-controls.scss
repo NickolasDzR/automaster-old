@@ -1,0 +1,47 @@
+.slider-controls {
+    z-index: 1;
+    padding-bottom: 100px;
+    .swiper-container {
+        overflow: hidden;
+    }
+
+    &__paragraph {
+        font-size: r(14);
+        font-weight: 600;
+        color: $wh;
+    }
+
+    &__decorative-line {
+        height: r(1);
+        width: 100%;
+        background-color: $wh;
+        position: relative;
+    }
+
+    &__decorative-line {
+        position: relative;
+    }
+
+    .swiper-slide-active .slider-controls__decorative-span {
+        height: 3px;
+        width: 100%;
+        background-color: #FFD400;
+        display: inline-block;
+        position: absolute;
+        top: -1px;
+        transition: all linear;
+        animation: widthDecorativeLine 3s linear;
+    }
+
+    .swiper-slide-prev .slider-controls__decorative-span:after {
+        content: '';
+        height: 3px;
+        width: 0;
+        left: 100%;
+        background-color: #FFD400;
+        display: inline-block;
+        position: absolute;
+        top: -1px;
+        animation: deleteLineRight 1s linear;
+    }
+}

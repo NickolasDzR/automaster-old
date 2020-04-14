@@ -1,3 +1,2 @@
-import "%modules%/header/header";
-import "%modules%/main/main";
-import "%modules%/footer/footer";
+import "%modules%/items-banner/items-banner";
+import "%modules%/main-slider/main-slider";

@@ -1,3 +1,29 @@
-@import "header/header";
-@import "main/main";
-@import "footer/footer";
+@import "items-banner/items-banner";
+@import "items-slide/items-slide";
+@import "navigation/navigation";
+@import "main-slider/main-slider";
+@import "main-slider-bg/main-slider-bg";
+@import "slider-controls/slider-controls";
+
+@keyframes widthDecorativeLine {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes deleteLineRight {
+    0% {
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 0%;
+    }
+}

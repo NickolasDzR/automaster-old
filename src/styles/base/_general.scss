@@ -247,3 +247,11 @@ body {
     opacity: 1;
     background-color: #454545;
 }
+
+header {
+  position: relative;
+  padding-left: r(80);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
