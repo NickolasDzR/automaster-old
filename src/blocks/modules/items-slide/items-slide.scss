@@ -1,0 +1,200 @@
+.items-slide {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: $blu;
+    transition: transform .5s ease-in;
+    transition-delay: .1s;
+    transform: translateX(r(-3000));
+    overflow-y: scroll;
+    padding-top: r(136);
+
+    &__features {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: r(20);
+
+    }
+
+    &__item {
+        @include col-nm(3);
+        border-bottom: 1px solid rgba($wh, .2);
+        text-align: left;
+        padding: r(35);
+        cursor: pointer;
+        position: relative;
+    }
+
+    &__desc {
+        span {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #FAFAFA;
+        }
+    }
+
+    &__item:hover>&__offer {
+        visibility: visible;
+        opacity: 1;
+        transition: all .4s ease-in;
+    }
+
+    &__item:hover>&__offer picture {
+        bottom: -3.75rem;
+        transition: bottom .4s ease-out;
+    }
+
+    &__item:hover>&__offer p {
+        transform: translate3d(0, 0, 0);
+        transition: transform .4s ease-out;
+    }
+
+    &__item:hover>&__offer span {
+        transform: translate3d(0, 0, 0);
+        transition: transform .4s ease-out;
+    }
+
+    &__offer {
+        visibility: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: $yel;
+        opacity: 0;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: r(33);
+        transition: all .4s ease-out;
+        // &:hover {
+        //     .square {
+        //         transition: all .3s linear;
+        //         background-color: $yel;
+        //         bottom: r(-7);
+        //         animation: span-bottom .3s linear;
+        //     }
+        // }
+
+        &:before {
+            top: 90%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            transition: top .4s ease-in;
+        }
+
+        &:before {
+            border-color: transparent;
+            border-top-color: $yel;
+            border-width: 9px;
+            margin-left: -136px;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: r(19);
+            color: #005AAB;
+            line-height: r(32);
+            transform: translate3d(r(-70), 0, 0);
+            transition: transform .4s linear;
+        }
+
+        span {
+            font-size: r(17);
+            line-height: r(24);
+            color: $wh;
+            display: inline-block;
+            transform: translate3d(r(-70), 0, 0);
+            transition: transform .4s linear;
+        }
+
+        picture {
+            position: absolute;
+            bottom: -6.75rem;
+            right: r(10);
+            transition: bottom .4s linear;
+        }
+    }
+    &__offer:hover {
+        &:before {
+            top: 100%;
+            transition: top .4s ease-out;
+        }
+    }
+
+    &__image {
+        margin-bottom: r(35);
+
+        span {
+            &::before {
+                font-size: r(52);
+            }
+        }
+    }
+
+    &__item:not(:nth-child(4n)) {
+        border-right: 1px solid rgba($wh, .2);
+    }
+
+    &__title {
+        @include col();
+        @include size(12);
+        @include row-flex();
+        justify-content: space-between;
+        margin-bottom: r(104);
+
+        h2 {
+            @include col();
+            @include size(5);
+            font-size: 2.9rem;
+            color: $wh;
+            line-height: r(56);
+        }
+    }
+
+    &__sign {
+        @include col();
+        @include size(5);
+        color: $yel;
+        display: flex;
+        align-items: center;
+
+        p:nth-child(1) {
+            font-size: r(96);
+            color: $yel;
+            line-height: 0.8;
+            text-align: left;
+            font-weight: 600;
+            @include col-nm(5);
+        }
+
+        p:nth-child(2) {
+            font-size: r(24);
+            color: $yel;
+            line-height: r(32);
+            @include col-nm(7);
+
+            span {
+                font-size: r(16);
+                width: 100%;
+                color: inherit;
+                line-height: r(20);
+            }
+        }
+    }
+}
+
+.items-slide_visible {
+    width: 100vw;
+    transition: all .5s ease-out;
+    transform: translateX(0);
+    z-index: 2;
+}

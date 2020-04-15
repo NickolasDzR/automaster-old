@@ -55,7 +55,7 @@
                 transition: all .3s linear;
             }
 
-            span {
+            .square {
                 transition: all .3s linear;
                 background-color: $yel;
                 bottom: r(-7);
@@ -75,20 +75,6 @@
             text-decoration: none;
             border: none;
             transition: all .3s linear;
-        }
-
-        span {
-            display: inline-block;
-            width: r(15);
-            height: r(15);
-            position: absolute;
-            background-color: $blu;
-            transform: rotate(45deg);
-            left: r(15);
-            bottom: r(4);
-            transition: all .3s linear;
-            z-index: -1;
-            animation: span-bottom .3s linear reverse;
         }
     }
 }

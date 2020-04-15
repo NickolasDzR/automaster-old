@@ -1,0 +1,3 @@
+@mixin col-nm($n) {
+    width: calc(100% / 12 * #{$n});
+}

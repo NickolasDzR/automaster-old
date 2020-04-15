@@ -99,9 +99,9 @@ const mainSwiperIsExist = () => {
             spaceBetween: 300,
             loop: true,
             loopedSlides: 3,
-            autoplay: {
-                delay: 2000,
-            },
+            // autoplay: {
+            //     delay: 2000,
+            // },
             thumbs: {
                 swiper: swiperBg,
             },
