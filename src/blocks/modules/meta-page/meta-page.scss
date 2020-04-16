@@ -1,0 +1,128 @@
+.meta-page {
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: rgba($wh, 0);
+    background-color: $blu;
+    transform: translate3d(-100%, 0, 0);
+    transition: all .7s ease-in;
+    transition-delay: .4s;
+
+    &.active {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+        color: rgba($wh, 1);
+        transition: all .7s ease-out;
+
+        .meta-page__wrapper {
+            opacity: 1;
+            transition: opacity .4s linear;
+            transition-delay: .6s;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        opacity: 0;
+        transition: opacity .4s linear;
+    }
+
+
+    &__title {
+        @include col-nm(4);
+
+        a {
+            font-size: 16px;
+            text-decoration: none;
+            color: inherit;
+
+            span {
+                margin-right: r(16);
+            }
+        }
+
+        h2 {
+            font-size: 48px;
+            line-height: 56px;
+            padding-bottom: r(20);
+            border-bottom: 1px solid rgba(#062945, .2);
+
+            margin: {
+                top: r(12);
+                bottom: r(20)
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &__links {
+        @include col-nm(6);
+        margin-top: 2.4rem;
+
+        ul {
+            list-style: none;
+            font-size: 32px;
+
+            li {
+                border-bottom: 1px solid rgba(#062945, .2);
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    padding: 5px 0;
+                    display: inline-block;
+                    font-size: 32px;
+                    font-weight: 600;
+                    position: relative;
+                    width: 100%;
+                    transition: color .4s linear;
+
+                    &:after {
+                        content: "\e900";
+
+                        font: {
+                            family: 'icomoon';
+                            size: r(13);
+                            weight: 500;
+                        }
+
+                        color: #fff;
+                        transform: rotate3d(0, 0, 1, 180deg);
+                        display: inline-block;
+                        vertical-align: middle;
+                        opacity: 0;
+                        position: relative;
+                        left: 23px;
+                        transition: all .4s linear;
+                    }
+                }
+            }
+
+            li:hover {
+                a {
+                    color: $yel;
+                    transition: color .4s linear;
+
+                    &:after {
+                        position: relative;
+                        opacity: 1;
+                        left: 43px;
+                        transition: all .4s linear;
+                    }
+                }
+            }
+        }
+    }
+}

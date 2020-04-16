@@ -1,0 +1,59 @@
+.solutions {
+    background-color: $wh;
+
+    &__wrapper {
+        @include row-flex();
+    }
+
+    &__item {
+        @include col();
+        @include size(3);
+        background-color: $blu;
+        padding: r(30) r(32);
+        transition: background-color .4s linear;
+        position: relative;
+
+        &:hover {
+            background-color: $yel;
+            transition: background-color .4s linear;
+        }
+    }
+
+    h2 {
+        text-align: left;
+
+        font: {
+            size: r(48);
+            weight: 700;
+        }
+    }
+
+    &__title {
+        color: #FFD400;
+
+        font: {
+            weight: 700;
+        }
+    }
+
+    &__text {
+        color: $wh;
+
+        font: {
+            size: r(12);
+            weight: 500;
+        }
+    }
+
+    &__link {
+        color: #FFD400;
+        display: block;
+        text-align: right;
+        text-decoration: none;
+
+        font: {
+            size: r(16);
+            weight: 700;
+        }
+    }
+}

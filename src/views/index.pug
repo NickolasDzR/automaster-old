@@ -6,19 +6,26 @@ include ../blocks/modules/navigation/navigation.pug
 include ../blocks/modules/main-slider/main-slider.pug
 include ../blocks/modules/main-slider-bg/main-slider-bg
 include ../blocks/modules/slider-controls/slider-controls
+include ../blocks/modules/advantages/advantages
+include ../blocks/modules/solutions/solutions
 
 block variables
 	- const title = "gulp-pug-starter"
 
 block content
-	#site-container 
+	.site-container 
 		header
 			+items-banner
-			+items-slide
+			+items-slide(true)
+			+meta-page
 			+navigation
 			+main-slider
 			+main-slider-bg
 			+slider-controls
+		main
+			+advantages
+			+items-slide(false)
+			+solutions
 
 block scripts
 	script(src="js/main.js")

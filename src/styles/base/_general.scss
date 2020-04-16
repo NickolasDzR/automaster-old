@@ -10,8 +10,7 @@
   @include xl(max-width, rem(1110));
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -26,256 +25,201 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-left:before {
+.icon-arrow:before {
   content: "\e900";
   color: #fff;
 }
-
-.icon-arrow-right:before {
-  content: "\e901";
-  color: #fff;
-}
-
 .icon-catalog:before {
   content: "\e902";
   color: #fff;
 }
-
 .icon-check:before {
   content: "\e903";
   color: #fff;
 }
-
 .icon-chevron-down:before {
   content: "\e904";
   color: #fff;
 }
-
 .icon-chevron-left:before {
   content: "\e905";
   color: #fff;
 }
-
 .icon-chevron-right:before {
   content: "\e906";
   color: #fff;
 }
-
 .icon-close:before {
   content: "\e907";
   color: #fff;
 }
-
 .icon-filter:before {
   content: "\e908";
   color: #005aab;
 }
-
 .icon-filter-price-down:before {
   content: "\e909";
   color: #005aab;
 }
-
 .icon-filter-price-up:before {
   content: "\e90a";
   color: #005aab;
 }
-
 .icon-form-mail:before {
   content: "\e90b";
   color: #eceff1;
 }
-
-.icon-form-phone:before {
-  content: "\e90c";
-}
-
 .icon-form-send:before {
   content: "\e90d";
   color: #fafafa;
 }
-
 .icon-hamburger:before {
   content: "\e90e";
   color: #fff;
 }
-
 .icon-list:before {
   content: "\e90f";
 }
-
 .icon-location:before {
   content: "\e910";
   color: #fff;
 }
-
 .icon-maximize:before {
   content: "\e911";
 }
-
 .icon-menu-blowtorch:before {
   content: "\e912";
   color: #ffd400;
 }
-
 .icon-menu-cabel:before {
-  content: "\e913";
+  content: "\1f31b";
   color: #ffd400;
 }
-
 .icon-menu-carcass:before {
   content: "\e914";
   color: #ffd400;
 }
-
 .icon-menu-jack:before {
   content: "\e915";
   color: #ffd400;
 }
-
 .icon-menu-lift:before {
   content: "\e916";
   color: #ffd400;
 }
-
 .icon-menu-oil:before {
   content: "\e917";
   color: #ffd400;
 }
-
 .icon-menu-pressure:before {
   content: "\e918";
   color: #ffd400;
 }
-
 .icon-menu-speed:before {
   content: "\e919";
   color: #ffd400;
 }
-
 .icon-menu-tire:before {
   content: "\e91a";
   color: #ffd400;
 }
-
 .icon-menu-wrench:before {
   content: "\e91b";
   color: #ffd400;
 }
-
 .icon-mini-logo .path1:before {
   content: "\e91c";
   color: rgb(255, 212, 0);
 }
-
 .icon-mini-logo .path2:before {
   content: "\e91d";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path3:before {
   content: "\e91e";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path4:before {
   content: "\e91f";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path5:before {
   content: "\e920";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path6:before {
   content: "\e921";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path7:before {
   content: "\e922";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path8:before {
   content: "\e923";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path9:before {
   content: "\e924";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path10:before {
   content: "\e925";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path11:before {
   content: "\e926";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path12:before {
   content: "\e927";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path13:before {
   content: "\e928";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-mini-logo .path14:before {
   content: "\e929";
   margin-left: -0.892578125em;
   color: rgb(0, 90, 171);
 }
-
 .icon-spray:before {
   content: "\e92a";
   color: #ffd400;
 }
-
 .icon-technolgy-building:before {
   content: "\e92b";
   color: #005aab;
 }
-
 .icon-technolgy-car:before {
   content: "\e92c";
   color: #005aab;
 }
-
 .icon-technolgy-repair:before {
   content: "\e92d";
   color: #005aab;
 }
-
 .icon-technolgy-wheels:before {
   content: "\e92e";
   color: #005aab;
 }
-
 .icon-technolgy-worker:before {
   content: "\e92f";
   color: #005aab;
 }
-
 
 body {
   font-size: 16px;
@@ -284,14 +228,18 @@ body {
   position: relative;
   margin: 0 auto;
   line-height: 1.75;
-  overflow: hidden;
+  overflow-x: hidden;
   opacity: 1;
-  background-color: #454545;
+  background-color: $wh;
+  color: $wh;
+}
+
+.site-container {
+  padding-left: 5rem;
 }
 
 header {
   position: relative;
-  padding-left: r(80);
   height: 100vh;
   display: flex;
   flex-direction: column;
