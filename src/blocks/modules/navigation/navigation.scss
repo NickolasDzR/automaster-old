@@ -16,6 +16,8 @@ nav {
 
             ul {
                 display: flex;
+                flex-direction: column;
+                align-items: center;
                 justify-content: space-between;
                 @include md(padding, r(52.1) 0);
             }

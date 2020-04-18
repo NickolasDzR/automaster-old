@@ -1,5 +1,5 @@
 // media for ie
-@media (max-width: r(576)) {
+@media screen and (max-width: r(576)) {
     nav {
         position: fixed;
         top: 0;

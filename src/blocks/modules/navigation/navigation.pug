@@ -1,8 +1,8 @@
 
 
 mixin navigation()
-    a.hamburger
-        span.hamburger-inner
+    include ../../components/hamburger/hamburger.pug
+    +hamburger
     nav(role="navigation")
         .container
             .nav__inner
