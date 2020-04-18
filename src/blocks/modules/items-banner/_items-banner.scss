@@ -1,5 +1,7 @@
 .items-banner {
     width: r(80);
+    @include md(width, r(60));
+    @include xs(width, r(40));
     height: 100vh;
     position: fixed;
     top: 0;
@@ -8,6 +10,8 @@
     background-color: $blu;
     transition: all .3s linear;
     padding: r(16) r(11);
+    @include md(padding, 0.7rem 0.4875rem);
+    @include xs(padding, 0.7rem 0.5875rem);
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -21,6 +25,8 @@
 
     .icon-mini-logo span:before {
         font-size: r(65);
+        @include md(font-size, 3.0625rem);
+        @include xs(font-size, 1.5625rem);
     }
 
     .icon-mini-logo {
@@ -55,6 +61,7 @@
         &:before {
             font-size: r(26);
             transition: all .5s linear;
+            @include md(font-size, r(18));
         }
 
         margin-right: r(10);
@@ -66,6 +73,8 @@
         color: $wh;
         font-weight: 500;
         transition: all .5s linear;
+        @include md(font-size, r(16));
+        @include xs(font-size, r(12));
     }
 
     &:hover &__paragraph {
@@ -78,6 +87,9 @@
         white-space: nowrap;
         margin: 0 r(-28) 0 r(-40);
         position: relative;
+        @include md(display, flex);
+        @include md(justify-content, center);
+        @include md(align-items, center);
     }
 
     &:after {

@@ -8,6 +8,8 @@ include ../blocks/modules/main-slider-bg/main-slider-bg
 include ../blocks/modules/slider-controls/slider-controls
 include ../blocks/modules/advantages/advantages
 include ../blocks/modules/solutions/solutions
+include ../blocks/modules/main-form/main-form
+include ../blocks/modules/copyright/copyright
 
 block variables
 	- const title = "gulp-pug-starter"
@@ -26,6 +28,10 @@ block content
 			+advantages
 			+items-slide(false)
 			+solutions
+			+main-form
+		footer
+			+copyright
+
 
 block scripts
 	script(src="js/main.js")

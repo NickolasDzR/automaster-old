@@ -11,25 +11,36 @@ nav {
         &__list {
             @include col();
             @include size(3);
+            @include size-lg(5);
+            @include size-md(12);
 
             ul {
                 display: flex;
                 justify-content: space-between;
+                @include md(padding, r(52.1) 0);
             }
 
             ul li {
                 position: relative;
                 font-size: r(12);
+                @include md(font-size, 0.65rem);
                 line-height: r(32);
                 text-transform: uppercase;
                 display: inline-block;
                 list-style: none;
+                @include md(display, inline-block);
+                @include md(width, 100%);
+                @include md(font-size, r(18));
+                @include md(font-weight, 700);
+                @include md(text-transform, uppercase);
+                @include md(margin-bottom, r(24));
 
                 a {
                     text-decoration: none;
                     color: $wh;
                 }
             }
+
             &_active:before {
                 content: '';
                 display: inline-block;
@@ -46,6 +57,8 @@ nav {
         &__contacts {
             @include col();
             @include size(4);
+            @include size-lg(6);
+            @include size-md(12);
             display: flex;
 
             &-language {
@@ -59,6 +72,7 @@ nav {
 
             &-language ul li {
                 font-size: r(12);
+                @include md(font-size, 0.65rem);
                 line-height: r(32);
                 text-transform: uppercase;
                 display: inline-block;
@@ -68,6 +82,7 @@ nav {
                     text-decoration: none;
                     color: $wh;
                 }
+
                 .nav__contacts-language_active {
                     color: $yel;
                 }
@@ -76,10 +91,12 @@ nav {
             &-number ul {
                 li:nth-child(1) {
                     font-size: r(20);
+                    @include md(font-size, 0.75rem)
                 }
 
                 li:nth-child(2) {
                     font-size: r(12);
+                    @include md(font-size, 0.75rem)
                 }
 
                 li {
@@ -95,6 +112,7 @@ nav {
     0% {
         width: 0%;
     }
+
     100% {
         width: 80%;
     }

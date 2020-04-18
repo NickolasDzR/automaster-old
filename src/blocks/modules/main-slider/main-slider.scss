@@ -23,6 +23,8 @@
         &-inner {
             @include col();
             @include size(8);
+            @include size-md(10);
+            @include size-sm(12);
         }
     }
 
@@ -33,12 +35,23 @@
             font-size: r(64);
             line-height: r(72);
             color: $yel;
+            margin-bottom: r(18);
+            @include xl(font-size, 3.4rem);
+            @include xl(line-height, 3.2rem);
+            @include lg(font-size, 2.8rem);
+            @include md(font-size, 2.3rem);
+            @include sm(font-size, r(28));
+            @include sm(line-height, r(34));
+            @include xs(font-size, r(28));
         }
 
         p {
             font-size: r(20);
             line-height: r(30);
             color: $wh;
+            @include md(font-size,1.05rem);
+            @include sm(font-size, r(16));
+            @include sm(line-height, r(24))
         }
     }
 
@@ -47,6 +60,7 @@
         width: 15.25rem;
         margin-bottom: 10px;
         z-index: 5;
+        margin-top: r(56);
 
         &:hover {
             a {

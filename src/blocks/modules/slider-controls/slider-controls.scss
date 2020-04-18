@@ -1,6 +1,6 @@
 .slider-controls {
     z-index: 1;
-    padding-bottom: 100px;
+    padding-bottom: r(50);
     .swiper-container {
         overflow: hidden;
     }
@@ -23,25 +23,25 @@
     }
 
     .swiper-slide-active .slider-controls__decorative-span {
-        height: 3px;
+        height: r(3);
         width: 100%;
         background-color: #FFD400;
         display: inline-block;
         position: absolute;
-        top: -1px;
+        top: r(-1);
         transition: all linear;
         animation: widthDecorativeLine 3s linear;
     }
 
     .swiper-slide-prev .slider-controls__decorative-span:after {
         content: '';
-        height: 3px;
+        height: r(3);
         width: 0;
         left: 100%;
         background-color: #FFD400;
         display: inline-block;
         position: absolute;
-        top: -1px;
+        top: r(-1);
         animation: deleteLineRight 1s linear;
     }
 }

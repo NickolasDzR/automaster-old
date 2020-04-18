@@ -1,12 +1,19 @@
 import 'nodelist-foreach-polyfill';
 import Swiper from 'swiper';
 
-if (!Modernizr.webp) {
-    const sliderBG = document.querySelectorAll('.main-slider-bg__item');
-    for (let i = 0; i < sliderBG.length; i += 1) {
-        sliderBG[i].style.backgroundImage = `url('img/main-slider-bg/slide-image-${i}.jpg')`;
+window.onload = () => {
+    if (!Modernizr.webp) {
+        const sliderBG = document.querySelectorAll('.main-slider-bg__item');
+        for (let i = 0; i < sliderBG.length; i += 1) {
+            sliderBG[i].style.backgroundImage = `url('img/main-slider-bg/slide-image-${i}.jpg')`;
+        }
     }
 }
+
+// if (!Modernizr.webp) {
+//     const sliderBG = document.querySelectorAll('.main-slider-bg__item');
+//     console.log()
+// }
 
 const changeActiveSlides = (active, next) => {
     const sliderControlsItem = document.querySelectorAll('.slider-controls__item');

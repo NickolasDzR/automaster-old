@@ -1,3 +1,4 @@
+import 'nodelist-foreach-polyfill';
 const metaPage = document.querySelector('.meta-page');
 const itemsSlideBlock = document.querySelector('.items-slide__features');
 const itemsSlideItems = document.querySelectorAll('.items-slide__item');

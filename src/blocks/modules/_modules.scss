@@ -7,14 +7,22 @@
 @import "slider-controls/slider-controls";
 @import "advantages/advantages";
 @import "solutions/solutions";
+@import "main-form/main-form";
+@import "copyright/copyright";
+
+.w-100 {
+    width: 100%;
+}
 
 @keyframes widthDecorativeLine {
     0% {
         width: 0%;
     }
+
     50% {
         width: 50%;
     }
+
     100% {
         width: 100%;
     }
@@ -25,8 +33,25 @@
         left: 0;
         width: 100%;
     }
+
     100% {
         left: 100%;
         width: 0%;
     }
+}
+
+.bg_primary {
+    background-color: $blu;
+}
+
+.bg_secondary {
+    background-color: $yel;
+}
+
+.bg_dark-grey {
+    background-color: $dgray;
+}
+
+.bg_light-gray {
+    background-color: $lgray;
 }

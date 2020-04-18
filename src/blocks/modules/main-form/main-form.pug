@@ -1,0 +1,21 @@
+mixin main-form()
+    include ../contacts/contacts.pug
+    section.main-form
+        .container
+            .main-form__wrapper
+                .main-form__inner
+                    .main-form__header
+                        h2   Хотите связаться с нами?
+                    .main-form__content
+                        .main-form__contacts
+                            +contacts('icon-phone', 'Номер телефона', '99 777 55 66  —  71 256 55 66')
+                            +contacts('icon-form-mail', 'Email адрес', 'info@automaster.uz')
+                        form.main-form__form
+                            .main-form__form-inputs
+                                label.main-form__form-label(data-title="Полное имя")
+                                    input.main-form__form-input(type="text")
+                                label.main-form__form-label(data-title="Email")
+                                    input.main-form__form-input(type="text")
+                            .main-form__form-inputs
+                                label.main-form__form-label.main-form__form-label_large.main-form__form-label_triangle(data-title="Текст обращения")
+                                    textarea.main-form__form-input(type="text" style="resize: vertical" )

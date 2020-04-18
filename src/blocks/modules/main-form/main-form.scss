@@ -1,0 +1,111 @@
+.main-form {
+    padding: r(79) 0;
+    margin-bottom: r(99);
+    .row {
+        @include row-flex;
+    }
+
+    .main-form__wrapper {
+        display: flex;
+        justify-content: center;
+        background: $blu;
+        padding: 4.9375rem 0;
+    }
+
+    &__inner {
+        @include col();
+        @include size(10);
+        @include row-flex();
+        background-color: $blu;
+    }
+
+    &__header {
+        @include col-nm(12);
+        margin-bottom: r(80);
+
+        h2 {
+            font-size: 48px;
+            color: $yel;
+            font-weight: 700;
+        }
+    }
+    &__contacts {
+        width: 46%;
+    }
+
+    &__form {
+        width: 54%;
+
+        &-inputs {
+            display: flex;
+            cursor: pointer;
+
+            &:not(:last-child) {
+                margin-bottom: 2.6rem;
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            width: 50%;
+            margin: 0 r(15);
+            position: relative;
+
+            &:before {
+                content: attr(data-title);
+                position: absolute;
+                top: 0.925rem;
+                left: r(2);
+                transition: all .2s linear;
+                pointer-events: none;
+            }
+
+            &_large {
+                width: 100%;
+            }
+            &_triangle:after {
+                content: "\e913";
+                color: #fafafa;
+                font-family: 'icomoon' !important;
+                font-size: 12px;
+                opacity: .4;
+                position: absolute;
+                bottom: 10px;
+                right: 0;
+                pointer-events: none;
+            }
+        }
+
+        &-input {
+            width: 100%;
+            font-weight: 600;
+            font-size: r(16);
+            color: #ECEFF1;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #ECEFF1;
+            padding: r(18) r(2);
+            outline: none;
+            line-height: 0.9;
+            overflow: hidden;
+            position: relative;
+            &::-webkit-resizer {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        @include col-nm(12);
+    }
+}
+
+.main-form__form-label.active:before {
+    top: -0.3rem;
+    left: 0.125rem;
+    font-size: 12px;
+    transition: all .2s ease-out;
+    pointer-events: none;
+}

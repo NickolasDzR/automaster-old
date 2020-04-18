@@ -1,0 +1,17 @@
+.contacts-item {
+    &__text {
+        font-weight: 600;
+        font-size: 16px;
+        color: $yel;
+    }
+
+    &__contact {
+        font-size: 16px;
+        color: #ECEFF1;
+        ;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: r(56);
+    }
+}
