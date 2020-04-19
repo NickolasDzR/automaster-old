@@ -1,5 +1,4 @@
-// media for ie
-@media screen and (max-width: r(576)) {
+@media screen and (max-width: r(768)) {
     nav {
         position: fixed;
         top: 0;
@@ -13,14 +12,17 @@
         transform: translate3d(100%, 0px, 0px);
         transition: transform .5s ease-in;
     }
+
     nav.active {
         transform: translate3d(0, 0px, 0px);
         transition: transform .5s ease-out;
     }
+
     nav .nav__inner {
         @include row-flex();
     }
 }
 
+// media for ie
 @media (-ms-high-contrast: none),
 (-ms-high-contrast: active) {}

@@ -4,7 +4,7 @@
     right: 25px;
     z-index: 101;
     display: none;
-    @include sm(display, inline-block);
+    @include md(display, inline-block);
     width: r(15);
     height: r(15);
     background: transparent;
@@ -45,6 +45,7 @@
   }
   
   .hamburger.active {
+    position: fixed;
     .hamburger-inner {
       transition: all .3s linear;
       transform: translate3d(0, r(4), 0) rotate(45deg);

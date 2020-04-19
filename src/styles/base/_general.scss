@@ -322,6 +322,10 @@ header {
   animation: span-bottom .3s linear reverse;
 }
 
+.mb-4 {
+    margin-bottom: r(20);
+}
+
 .w-100 {
   width: 100%;
 }
@@ -338,5 +342,24 @@ header {
   width: 25%;
 }
 
+.h-100 {
+  height: 100%;
+}
+
+.bg_primary {
+  background-color: $blu;
+}
+
+.bg_secondary {
+  background-color: $yel;
+}
+
+.bg_dark-grey {
+  background-color: $dgray;
+}
+
+.bg_light-gray {
+  background-color: $lgray;
+}
 @import '../../blocks/modules/contacts/contacts';
 @import '../../blocks/components/components'

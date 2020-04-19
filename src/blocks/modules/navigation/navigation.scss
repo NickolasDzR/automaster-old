@@ -1,28 +1,49 @@
 nav {
     padding-top: r(30);
     z-index: 1;
+    @include md(display, flex);
+    @include md(flex-direction, column);
+    @include md(justify-content, space-between);
+
 
     .nav {
         &__inner {
             @include row-flex();
+            height: 100%;
             justify-content: space-between;
+            align-items: flex-start;
+            @include md(align-items, center);
+        }
+
+        &__menu {
+            @include col();
+            @include size(3);
+            @include size-lg(4);
+            @include size-md(12);
+            @include md(padding-left, r(25.7));
+
+            &_active:before {
+                content: '';
+                display: inline-block;
+                width: 80%;
+                @include md(width, 5%);
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $yel;
+                animation: border-width .3s linear;
+            }
         }
 
         &__list {
-            @include col();
-            @include size(3);
-            @include size-lg(5);
-            @include size-md(12);
+            display: flex;
+            justify-content: space-between;
+            @include md(flex-direction, column);
+            @include md(align-items, center);
+            @include md(padding, r(52.1) 0);
 
-            ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                @include md(padding, r(52.1) 0);
-            }
-
-            ul li {
+            &-item {
                 position: relative;
                 font-size: r(12);
                 @include md(font-size, 0.65rem);
@@ -36,40 +57,32 @@ nav {
                 @include md(font-weight, 700);
                 @include md(text-transform, uppercase);
                 @include md(margin-bottom, r(24));
-
-                a {
-                    text-decoration: none;
-                    color: $wh;
-                }
             }
 
-            &_active:before {
-                content: '';
-                display: inline-block;
-                width: 80%;
-                height: 1px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: $yel;
-                animation: border-width .3s linear;
+            &-link {
+                text-decoration: none;
+                color: $wh;
             }
         }
 
         &__contacts {
             @include col();
-            @include size(4);
+            @include size(5);
             @include size-lg(6);
             @include size-md(12);
             display: flex;
+            flex-wrap: wrap;
+            @include md(display, none);
 
             &-language {
                 padding-right: r(34);
+                @include md(display, none);
             }
 
             &-number {
                 padding-left: r(34);
                 border-left: 1px solid $wh;
+                @include md(display, none);
             }
 
             &-language ul li {
@@ -108,6 +121,21 @@ nav {
             }
         }
     }
+
+    .contacts {
+        display: none;
+        @include md(display, block);
+        width: 100%;
+
+        padding: {
+            top: r(38.6);
+            right: r(40.7);
+            bottom: 0;
+            left: r(40.7);
+        }
+
+        background-color: #0055A2;
+    }
 }
 
 @keyframes border-width {
@@ -118,4 +146,8 @@ nav {
     100% {
         width: 80%;
     }
+}
+
+.nav__list_active .nav__list-link {
+    @include md(color, $yel);
 }
