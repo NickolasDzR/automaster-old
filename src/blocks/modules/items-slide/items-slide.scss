@@ -1,42 +1,58 @@
 .items-slide {
-    z-index: 2;
+    z-index: 7;
     background-color: $blu;
     transition: all .5s ease-out;
     transform: translateX(0);
 
     padding: {
-        top: r(136);
+        top: 2.5rem;
+        ;
         bottom: 2.5rem;
     }
+
+    @include sm(padding-bottom, 0);
+    @include sm(padding-bottom, 1.8875rem);
+    @include sm(padding-top, 1.8875rem);
 
     overflow: hidden;
 
     display: flex;
     justify-content: center;
 
-    &__wrapper.items-slide__wrapper_scroll {
-        width: 86%;
-        height: 100%;
-        overflow-y: scroll;
-        max-height: 100vh;
+    &__wrapper {
+        @include container();
 
-        &::-webkit-scrollbar {
-            width: 8px;
-        }
+        &_scroll {
+            width: 86%;
+            @include sm(width, 100%);
+            height: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 100vh;
 
-        &::-webkit-scrollbar-track {
-            background: rgba($wh, .2);
-            border-radius: r(4);
-        }
+            &::-webkit-scrollbar {
+                width: 8px;
+                @include sm(width, 0);
+            }
 
-        &::-webkit-scrollbar-thumb {
-            background: rgba($wh, .5);
-            border-radius: r(4);
-        }
+            &::-webkit-scrollbar-track {
+                background: rgba($wh, .2);
+                border-radius: r(4);
+            }
 
-        &::-webkit-scrollbar-thumb:hover {
-            background: rgba($wh, .7);
+            &::-webkit-scrollbar-thumb {
+                background: rgba($wh, .5);
+                border-radius: r(4);
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgba($wh, .7);
+            }
         }
+    }
+
+    &__inner {
+        @include row-flex();
     }
 
     &__features {
@@ -49,12 +65,18 @@
 
     &__item {
         @include col-nm(3);
+        @include col-nm-lg(6);
+        @include col-nm-sm(12);
         border-bottom: 1px solid rgba($wh, .2);
         text-align: left;
         padding: r(35);
         padding-right: 4.2875rem;
+        @include lg(padding, 1.6875rem);
+        @include sm(padding-right, 0.5rem);
+        @include sm(padding-left, 0.5rem);
         cursor: pointer;
         position: relative;
+        @include sm(display, flex);
     }
 
     &__item:nth-last-child(-n+4) {
@@ -62,11 +84,21 @@
     }
 
     &__desc {
+        @include col-nm-sm(9);
+        @include sm(display, flex);
+        @include sm(justify-content, flex-start);
+        @include sm(align-items, center);
+        @include sm(padding-left, 15px);
+
         span {
             font: {
                 weight: 600;
                 size: 1.05rem;
             }
+
+            @include xl(font-size, 0.95rem);
+            @include sm(font-size, r(16));
+            @include sm(font-weight, 400);
 
             color: #FAFAFA;
         }
@@ -78,8 +110,10 @@
         transition: all .4s ease-in;
     }
 
-    &__item:hover>&__offer picture {
-        top: 6.25rem;
+    &__item:hover>&__offer .items-slide__img {
+        top: 8.25rem;
+        @include lg(top, 4rem);
+        @include sm(top, 1.3rem);
         transition: top .4s ease-out;
     }
 
@@ -91,6 +125,13 @@
     &__item:hover>&__offer span {
         transform: translate3d(0, 0, 0);
         transition: transform .4s ease-out;
+    }
+
+    &__item:hover>&__offer:before {
+        content: "";
+        bottom: r(-18);
+        transition: bottom .4s ease-out;
+        transition-delay: .4s;
     }
 
     &__offer {
@@ -106,25 +147,27 @@
         right: 0;
         bottom: 0;
         padding: r(33);
+        @include lg(padding, 1.6875rem);
+        @include sm(padding, 0.9875rem 0.5875rem);
         transition: all .4s ease-out;
 
         &:before {
-            top: 90%;
-            left: 50%;
+            bottom: r(0);
+            left: 10%;
             border: solid transparent;
             content: " ";
             height: 0;
             width: 0;
             position: absolute;
             pointer-events: none;
-            transition: top .4s ease-in;
+            transition: bottom .4s ease-in;
+            transition-delay: 2s;
         }
 
         &:before {
             border-color: transparent;
             border-top-color: $yel;
             border-width: 9px;
-            margin-left: -136px;
             pointer-events: none;
         }
 
@@ -148,10 +191,19 @@
             pointer-events: none;
         }
 
-        picture {
+        .items-slide__img {
+            z-index: 1;
             position: absolute;
             top: 9.25rem;
+            @include xl(top, 11.25rem);
+            @include lg(top, 8.25rem);
             right: r(10);
+            @include xl(right, -2.375rem);
+            @include lg(right, -1.375rem);
+            @include md(right, -2.875rem);
+            @include sm(right, 1rem);
+            @include xl(max-width, 70%);
+            @include sm(max-width, 25%);
             transition: top .4s linear;
             pointer-events: none;
         }
@@ -166,6 +218,11 @@
 
     &__image {
         margin-bottom: r(35);
+        @include xl(margin-bottom, 0.6875rem);
+        @include col-nm-sm(3);
+        @include sm(margin-bottom, 0);
+        @include sm(display, flex);
+        @include sm(align-items, center);
 
         span {
             &::before {
@@ -176,6 +233,15 @@
 
     &__item:not(:nth-child(4n)) {
         border-right: 1px solid rgba($wh, .2);
+        @include lg(border-right, none);
+    }
+
+    &__item:not(:nth-child(2n)) {
+        @include lg(border-right, 1px solid rgba($wh, .2))
+    }
+
+    &__item:not(:nth-child(2n)) {
+        @include sm(border-right, 0)
     }
 
     &__title {
@@ -184,6 +250,9 @@
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: r(104);
+        @include md(display, flex);
+        @include md(flex-wrap, wrap);
+        @include md(margin-bottom, r(37));
 
         h2 {
             @include col();
@@ -191,38 +260,60 @@
             font-size: 2.9rem;
             color: $wh;
             line-height: r(56);
+            @include col-nm-md(12);
+            @include md(margin-bottom, r(30));
         }
     }
 
     &__sign {
         @include col();
-        @include size(5);
+        @include size(6);
         color: $yel;
         display: flex;
         align-items: center;
+        @include xl(flex-direction, column);
+        @include xl(align-items, flex-start);
+        @include col-nm-md(12);
+        @include md(flex-direction, row);
 
-        p:nth-child(1) {
+        &-number {
             font-size: r(96);
             color: $yel;
             line-height: 0.8;
             text-align: left;
             font-weight: 900;
             @include col-nm(5);
+            @include xl(margin-bottom, r(15));
+            @include col-nm-xl(12);
+            @include col-nm-md(5);
+            @include md(font-size, r(45.4151));
         }
 
-        p:nth-child(2) {
+        &-text {
             font-size: r(24);
+            @include md(font-size, r(20));
+            @include xs(font-size, r(12));
             color: $yel;
             line-height: 1rem;
             @include col-nm(7);
+            @include col-nm-xl(12);
+            @include col-nm-md(7);
+            @include md(font-size, r(12))
+            @include md(font-weight, 700);
 
             span {
+                max-width: 255px;
                 font-size: r(16);
+                @include md(font-size, r(12));
+                @include xs(font-size, r(8));
                 width: 100%;
                 color: inherit;
                 line-height: 1.25rem;
-                margin-top: 15px;
+                margin-top: r(15);
+                @include md(margin-top, r(5));
                 display: inline-block;
+                @include md(font-weight, 400);
+                @include md(font-size, r(8));
             }
         }
     }
@@ -236,7 +327,9 @@
 
 .items-slide_fixed {
     position: fixed;
-    width: 100%;
+    width: calc(100% - 5rem);
+    @include md(width, calc(100% - 3.75rem));
+    @include xs(width, calc(100% - 2.5rem));
     height: 100%;
 }
 

@@ -1,3 +1,39 @@
+$break_xl: 80rem;
+$break_lg: 62rem;
+$break_md: 48rem;
+$break_sm: 36rem;
+$break_xs: 20rem;
+
 @mixin col-nm($n) {
     width: 100% / 12 * $n;
+}
+
+@mixin col-nm-xl($n) {
+    @media screen and (max-width: $break_xl) {
+        width: 100% / 12 * $n;
+    }
+}
+
+@mixin col-nm-lg($n) {
+    @media screen and (max-width: $break_lg) {
+        width: 100% / 12 * $n;
+    }
+}
+
+@mixin col-nm-md($n) {
+    @media screen and (max-width: $break_md) {
+        width: 100% / 12 * $n;
+    }
+}
+
+@mixin col-nm-sm($n) {
+    @media screen and (max-width: $break_sm) {
+        width: 100% / 12 * $n;
+    }
+}
+
+@mixin col-nm-xs($n) {
+    @media screen and (max-width: $break_xs) {
+        width: 100% / 12 * $n;
+    }
 }

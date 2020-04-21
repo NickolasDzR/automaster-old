@@ -12,7 +12,7 @@
     padding: r(16) r(11);
     @include md(padding, 0.7rem 0.4875rem);
     @include xs(padding, 0.7rem 0.5875rem);
-    z-index: 3;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,6 +96,8 @@
         content: '';
         width: r(24);
         height: r(24);
+        @include xs(width, 1.2rem);
+        @include xs(height, 1.2rem);
         position: absolute;
         bottom: 2rem;
         background-color: $blu;

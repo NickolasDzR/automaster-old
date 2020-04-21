@@ -6,7 +6,7 @@ mixin navigation()
     include ../../components/hamburger/hamburger.pug
     +hamburger
     nav.nav(role="navigation")
-        .container.w-100.h-100
+        .nav__wrapper
             .nav__inner
                 .nav__menu
                     ul.nav__list
@@ -14,7 +14,7 @@ mixin navigation()
                             a.nav__list-link(href="")  Решения
                         li.nav__list-item
                             a.nav__list-link(href="")  Портфолио
-                        li.nav__list-item.nav__list_active
+                        li.nav__list-item.nav__menu_active
                             a.nav__list-link(href="")  О нас
                 .nav__contacts
                     .nav__contacts-language

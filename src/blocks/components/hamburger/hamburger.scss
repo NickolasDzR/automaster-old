@@ -2,7 +2,7 @@
     position: absolute;
     top: 21px;
     right: 25px;
-    z-index: 101;
+    z-index: 6;
     display: none;
     @include md(display, inline-block);
     width: r(15);
@@ -46,6 +46,7 @@
   
   .hamburger.active {
     position: fixed;
+    z-index: 6;
     .hamburger-inner {
       transition: all .3s linear;
       transform: translate3d(0, r(4), 0) rotate(45deg);
