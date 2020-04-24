@@ -6,8 +6,7 @@
 
     padding: {
         top: 2.5rem;
-        ;
-        bottom: 2.5rem;
+        bottom: 1rem;
     }
 
     @include sm(padding-bottom, 0);
@@ -17,18 +16,20 @@
     overflow: hidden;
 
     display: flex;
+    @include lg(display, block);
     justify-content: center;
 
-    &__wrapper {
-        @include container();
 
+    &__wrapper {
         &_scroll {
-            width: 86%;
-            @include sm(width, 100%);
             height: 100%;
             overflow-y: scroll;
             overflow-x: hidden;
             max-height: 100vh;
+            margin: 0 r(30) 0 r(15);
+            @include sm(margin, 0 r(15) 0 r(15));
+            padding-right: 10px;
+            @include sm(padding-right, 0);  
 
             &::-webkit-scrollbar {
                 width: 8px;
@@ -60,6 +61,13 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: r(20);
+        @include sm(display, flex);
+        @include sm(justify-content, center);
+        @include sm(align-items, center);
+        height: auto;
+        @include lg(height, r(500));
+        @include sm(height, r(300));
+        @include xs(height, r(250));
 
     }
 
@@ -77,10 +85,39 @@
         cursor: pointer;
         position: relative;
         @include sm(display, flex);
+        @include sm(justify-content, center);
+        @include sm(align-items, center);
+        @include lg(height, 33.3333%);
     }
 
     &__item:nth-last-child(-n+4) {
         border-bottom: none;
+        @include lg(border-bottom, 1px solid rgba($wh, .1));
+    }
+
+    &__item:nth-last-child(-n+4) {
+        @include lg(border-bottom, none);
+        @include sm(border-bottom, 1px solid rgba($wh, .1));
+    }
+    &__item:nth-last-child(n+3) {
+        @include lg(border-bottom, 1px solid rgba($wh, .1));
+        @include sm(border-bottom, none);
+    }
+    &__item:nth-last-child(n+1) {
+        @include sm(border-bottom, 1px solid rgba($wh, .1));
+    }
+
+    &__item:nth-last-child(-n+1) {
+        @include sm(border-bottom, none)
+    }
+
+    &__item:not(:nth-child(4n)) {
+        border-right: 1px solid rgba($wh, .1);
+        @include lg(border-right, none);
+    }
+    &__item:not(:nth-child(2n)) {
+        @include lg(border-right, 1px solid rgba($wh, .1));
+        @include sm(border-right, 0);
     }
 
     &__desc {
@@ -199,9 +236,10 @@
             @include lg(top, 8.25rem);
             right: r(10);
             @include xl(right, -2.375rem);
-            @include lg(right, -1.375rem);
-            @include md(right, -2.875rem);
+            @include lg(right, 0.625rem);
+            @include md(right, 0.125rem);
             @include sm(right, 1rem);
+            @include md(max-width, 40%);
             @include xl(max-width, 70%);
             @include sm(max-width, 25%);
             transition: top .4s linear;
@@ -217,7 +255,7 @@
     }
 
     &__image {
-        margin-bottom: r(35);
+        margin-bottom: 0.5875rem;
         @include xl(margin-bottom, 0.6875rem);
         @include col-nm-sm(3);
         @include sm(margin-bottom, 0);
@@ -227,21 +265,9 @@
         span {
             &::before {
                 font-size: r(52);
+                @include xs(font-size, 2.45rem);
             }
         }
-    }
-
-    &__item:not(:nth-child(4n)) {
-        border-right: 1px solid rgba($wh, .2);
-        @include lg(border-right, none);
-    }
-
-    &__item:not(:nth-child(2n)) {
-        @include lg(border-right, 1px solid rgba($wh, .2))
-    }
-
-    &__item:not(:nth-child(2n)) {
-        @include sm(border-right, 0)
     }
 
     &__title {
@@ -262,6 +288,9 @@
             line-height: r(56);
             @include col-nm-md(12);
             @include md(margin-bottom, r(30));
+            @include md(font-size, 2.8rem);
+            @include xs(font-size, 2rem);
+            @include xs(line-height, 40px);
         }
     }
 
@@ -275,6 +304,7 @@
         @include xl(align-items, flex-start);
         @include col-nm-md(12);
         @include md(flex-direction, row);
+        @include md(align-items, center);
 
         &-number {
             font-size: r(96);
@@ -284,27 +314,32 @@
             font-weight: 900;
             @include col-nm(5);
             @include xl(margin-bottom, r(15));
+            @include md(margin-bottom, 0);
             @include col-nm-xl(12);
             @include col-nm-md(5);
-            @include md(font-size, r(45.4151));
+            @include md(font-size, 4.83844rem);
+            @include sm(font-size, 2.73844rem);
+            @include xs(font-size, r(45.4151));
+            @include xs(line-height, r(54));
         }
 
         &-text {
             font-size: r(24);
-            @include md(font-size, r(20));
-            @include xs(font-size, r(12));
             color: $yel;
             line-height: 1rem;
+            @include md(line-height, 2rem);
             @include col-nm(7);
             @include col-nm-xl(12);
             @include col-nm-md(7);
-            @include md(font-size, r(12))
+            @include md(font-size, 2rem);
             @include md(font-weight, 700);
+            @include xs(font-size, r(12));
+            @include xs(line-height, r(16));
+            @include sm(font-size, 1.7rem);
 
             span {
                 max-width: 255px;
                 font-size: r(16);
-                @include md(font-size, r(12));
                 @include xs(font-size, r(8));
                 width: 100%;
                 color: inherit;
@@ -313,7 +348,10 @@
                 @include md(margin-top, r(5));
                 display: inline-block;
                 @include md(font-weight, 400);
-                @include md(font-size, r(8));
+                @include md(font-size, 1rem);
+                @include sm(font-size, 0.8rem);
+                @include xs(font-size, r(8));
+                @include xs(line-height, r(10));
             }
         }
     }
@@ -338,4 +376,31 @@
     scrollbar-face-color: #E6E7E8;
     scrollbar-arrow-color: rgba($wh, 0);
     scrollbar-track-color: #FAFAFA;
+}
+
+.items-slider {
+    overflow: hidden !important;
+    padding-bottom: r(40);
+}
+
+
+.swiper-pagination {
+    &__width {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: r(25);
+    }
+
+    &__line {
+        width: r(43);
+        height: r(3);
+        background-color: rgba($wh, .5);
+        display: inline-block;
+        margin: 0 r(8);
+    }
+
+    &-bullet-active {
+        background-color: $yel;
+    }
 }

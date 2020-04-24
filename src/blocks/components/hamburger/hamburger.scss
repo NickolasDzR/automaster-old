@@ -46,7 +46,7 @@
   
   .hamburger.active {
     position: fixed;
-    z-index: 6;
+    z-index: 11;
     .hamburger-inner {
       transition: all .3s linear;
       transform: translate3d(0, r(4), 0) rotate(45deg);

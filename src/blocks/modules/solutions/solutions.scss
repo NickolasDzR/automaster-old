@@ -2,18 +2,25 @@
     background-color: $wh;
     margin-top: r(99);
     margin-bottom: r(58.5);
-
     &__wrapper {
+        @include container();
+    }
+
+    &__inner {
         @include row-flex();
+        @include lg(flex-wrap, nowrap);
     }
 
     &__item {
         @include col();
         @include size(3);
+        @include size-lg(5);
         background-color: $blu;
         padding: r(30) r(32);
         transition: background-color .2s linear;
         position: relative;
+        @include lg(margin-left, 0);
+        @include lg(margin-right, 0);
 
         display: flex;
         flex-direction: column;

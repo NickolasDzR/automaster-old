@@ -4,6 +4,7 @@
     @include md(display, flex);
     @include md(flex-direction, column);
     @include md(justify-content, space-between);
+    @include sm(overflow-x, scroll);
     &__wrapper {
         @include container();
         width: 100%;

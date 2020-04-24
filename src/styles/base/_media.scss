@@ -16,6 +16,7 @@
     nav.active {
         transform: translate3d(0, 0px, 0px);
         transition: transform .5s ease-out;
+        z-index: 10;
     }
 
     nav .nav__inner {

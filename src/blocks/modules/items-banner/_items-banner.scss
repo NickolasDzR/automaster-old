@@ -3,6 +3,7 @@
     @include md(width, r(60));
     @include xs(width, r(40));
     height: 100vh;
+    min-height: r(320);
     position: fixed;
     top: 0;
     left: 0;

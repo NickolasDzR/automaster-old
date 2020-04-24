@@ -1,4 +1,5 @@
 .main-slider {
+    @include sm(margin-top, r(144));
     .swiper-slide-active {
         opacity: 1;
         animation: ActiveSlideIn 1s ease-in;

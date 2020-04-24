@@ -4,6 +4,9 @@
         bottom: r(158);
     }
 
+    @include lg(padding-top, 5rem);
+    @include sm(padding-bottom, 5rem);
+
     &__wrapper {
         @include row-flex;
         justify-content: space-between;
@@ -13,13 +16,14 @@
     &__title {
         @include col();
         @include size(5);
-        @include size-sm(12);
+        @include size-lg(12);
+        @include lg(margin-bottom, r(40));
     }
 
     &__items {
         @include col();
         @include size(6);
-        @include size-sm(12);
+        @include size-lg(12);
     }
 
     &__desc {
@@ -31,6 +35,8 @@
         color: $blu;
         line-height: 1.55;
         margin-bottom: r(55);
+        @include xl(margin-bottom, 2.4375rem);
+        @include lg(margin-bottom, r(22));
     }
 
     &__text {
@@ -40,41 +46,81 @@
 
         color: #062945;
         line-height: r(32);
+        @include lg(margin-bottom, r(22));
     }
 
     &__items {
         ul {
             list-style: none;
             @include row-flex;
+            @include sm(justify-content, center);
+            @include sm(padding, 0 15px);
 
             li {
                 text-align: left;
                 display: inline-block;
                 color: $bl;
                 @include col-nm(6);
+                @include lg(text-align, center);
+                @include lg(display, flex);
+                @include lg(flex-direction, column);
+                @include lg(align-items, center);
+                @include col-nm-sm(12);
+                @include sm(max-width, 100%);
+                @include sm(flex-direction, row);
+                @include sm(justify-content, flex-start);
+                @include sm(align-items, flex-start);
 
                 span {
                     margin-bottom: r(21);
                     display: inline-block;
+                    @include sm(margin-bottom, 0);
+                    @include sm(margin-right, r(15));
 
                     &:before {
                         font-size: r(48);
+                        @include lg(font-size, 4rem);
+                        @include md(font-size, r(48));
+                        @include sm(font-size, 2.2rem)
                     }
-                }   
+                }
 
                 p {
                     @include col-nm(8);
+                    @include col-nm-lg(12);
+                    @include lg(max-width, 50%);
+                    @include sm(text-align, left);
+                    @include sm(max-width, 70%);
+                    @include sm(position, relative);
+
+                    &:after {
+                        @include sm(content, '');
+                        @include sm(background-color, rgba(0, 90, 171, 0.2));
+                        @include sm(width, 7.8125rem);
+                        @include xs(width, 4.8125rem);
+                        @include sm(height, 0.0625rem);
+                        @include sm(position, absolute);
+                        @include sm(top, r(-7.88));
+                        @include sm(left, 0);
+                    }
 
                     font: {
                         size: r(12);
                     }
+                    @include sm(font-size, r(16));
+                    @include xs(font-size, r(12));
 
                     line-height: r(18);
                 }
             }
 
             li:not(:nth-last-child(-n+2)) {
-                margin-bottom: r(39)
+                margin-bottom: r(39);
+                @include sm(margin-bottom, 0);
+            }
+            li:not(:last-child) {
+                @include sm(margin-bottom, r(50));
+                @include xs(margin-bottom, r(39));
             }
         }
     }

@@ -34,6 +34,7 @@
         "bem-tools-create": "bem-tools/bem-tools-create",
         "browser-sync": "^2.23.6",
         "del": "^4.1.1",
+        "enquire.js": "^2.1.6",
         "eslint": "~6.0.0",
         "gulp": "^4.0.0",
         "gulp-autoprefixer": "~6.1.0",
