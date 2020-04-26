@@ -21,6 +21,7 @@
 
 
     &__wrapper {
+        @include container();
         &_scroll {
             height: 100%;
             overflow-y: scroll;
@@ -357,7 +358,7 @@
     }
 }
 
-.items-slide_visible {
+.items-slide_hidden {
     transition: transform .5s ease-in;
     transition-delay: .1s;
     transform: translateX(-100%);

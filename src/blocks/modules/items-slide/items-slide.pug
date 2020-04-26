@@ -324,7 +324,7 @@ mixin isBoolean()
                         img.items-slide__img(src="img/items-slide/12.png", alt="icon")
 mixin items-slide(boolean)
     - const maxItems = 12;
-    div(class= boolean ? ' items-slide items-slide_fixed items-slide_visible' : 'items-slide')
+    div(class= boolean ? ' items-slide items-slide_fixed items-slide_hidden' : 'items-slide')
         div(class= boolean ? 'items-slide__wrapper items-slide__wrapper_scroll' : 'items-slide__wrapper')
             if boolean
                 +notBoolean

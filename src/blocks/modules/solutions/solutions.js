@@ -11,7 +11,19 @@ let solutionSwiper = undefined;
 const initSolutionSwiper = () => {
     solutionSwiper = new Swiper('.solutions__wrapper .swiper-container', {
         slidesPerView: 3,
-        spaceBetween: 15,
+        // spaceBetween: 15,
+        breakpoints: {
+            768: {
+                spaceBetween: 15,
+                slidesPerView: 3,
+            },
+            576: {
+                slidesPerView: 2,
+            },
+            320: {
+                slidesPerView: 1,
+            },
+        }
     });
 }
 
@@ -31,5 +43,7 @@ enquire.register("screen and (max-width: 992px)", {
         createSolutionsSlider();
         initSolutionSwiper();
     },
-
+    unmatch: () => {
+        solutionSwiper.destroy(true, true);
+    }
 });

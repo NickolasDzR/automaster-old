@@ -2,6 +2,7 @@
     background-color: $wh;
     margin-top: r(99);
     margin-bottom: r(58.5);
+
     &__wrapper {
         @include container();
     }
@@ -9,6 +10,11 @@
     &__inner {
         @include row-flex();
         @include lg(flex-wrap, nowrap);
+        @include lg(margin-left, 0);
+        @include lg(margin-right, 0);
+    }
+    &__header {
+        margin-bottom: r(35);
     }
 
     &__item {
@@ -21,26 +27,29 @@
         position: relative;
         @include lg(margin-left, 0);
         @include lg(margin-right, 0);
-
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        overflow:hidden;
+        overflow: hidden;
 
 
         &:hover {
             background-color: $yel;
             transition: background-color .2s linear;
+
             .solutions__title,
             .solutions__link {
                 color: $blu;
                 transition: color .2s linear;
             }
+
             .solutions__text {
                 color: $bl;
                 transition: color .2s linear;
             }
         }
+
         img {
             position: relative;
             left: r(-32);
@@ -48,18 +57,10 @@
         }
     }
 
-    h2 {
-        text-align: left;
-
-        font: {
-            size: r(48);
-            weight: 700;
-        }
-    }
-
     &__title {
         color: #FFD400;
         transition: color .2s linear;
+
         font: {
             weight: 700;
         }
@@ -68,6 +69,7 @@
     &__text {
         color: $wh;
         transition: color .2s linear;
+
         font: {
             size: r(12);
             weight: 500;

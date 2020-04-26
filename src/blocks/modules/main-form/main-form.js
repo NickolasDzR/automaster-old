@@ -1,4 +1,4 @@
-const mainFormInputs = document.querySelectorAll('.main-form__form-input');
+const mainFormInputs = document.querySelectorAll('.main-form__box .main-form__input');
 
 mainFormInputs.forEach((el) => {
     el.addEventListener('focus', () => {

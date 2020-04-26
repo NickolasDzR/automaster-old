@@ -4,19 +4,24 @@
     background-color: #E6E7E8;
     padding: 1.025rem 0 r(10);
     color: #062945;
+
     &__wrapper {
         justify-content: space-between;
         @include row-flex();
     }
-    &__year {
-        @include col();
-        @include size(3);
-        text-align: left;
-    }
 
-    &__created {
+    &__item {
         @include col();
-        @include size(2);
-        text-align: right;
+        @include size(6);
+        @include size-sm(12);
+        &_left {
+            text-align: left;
+            @include sm(text-align, center);
+        }
+    
+        &_right {
+            text-align: right;
+            @include sm(text-align, center);
+        }
     }
 }

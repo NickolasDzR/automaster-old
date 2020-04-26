@@ -1,21 +1,23 @@
 mixin main-form()
     include ../contacts/contacts.pug
     section.main-form
-        .container
-            .main-form__wrapper
-                .main-form__inner
-                    .main-form__header
-                        h2   Хотите связаться с нами?
-                    .main-form__content
-                        .main-form__contacts
-                            +contacts('icon-phone', 'Номер телефона', '99 777 55 66  —  71 256 55 66')
-                            +contacts('icon-form-mail', 'Email адрес', 'info@automaster.uz')
-                        form.main-form__form
-                            .main-form__form-inputs
-                                label.main-form__form-label(data-title="Полное имя")
-                                    input.main-form__form-input(type="text")
-                                label.main-form__form-label(data-title="Email")
-                                    input.main-form__form-input(type="text")
-                            .main-form__form-inputs
-                                label.main-form__form-label.main-form__form-label_large.main-form__form-label_triangle(data-title="Текст обращения")
-                                    textarea.main-form__form-input(type="text" style="resize: vertical" )
+        .main-form__wrapper.decorate__square.decorate__square_position_form
+            .main-form__inner
+                h2.main-form__header.h2-heading.h2-heading_yellow   Хотите связаться с нами?
+                .main-form__content
+                    .main-form__contacts-wrp
+                        +contacts('icon-phone', 'Номер телефона', '99 777 55 66  —  71 256 55 66', 'main-form__contact')
+                        +contacts('icon-form-mail', 'Email адрес', 'info@automaster.uz', 'main-form__contact')
+                    form.main-form__form
+                        div.main-form__box
+                            label.main-form__label(data-title="Полное имя")
+                                input.main-form__input(type="text")
+                        div.main-form__box
+                            label.main-form__label(data-title="Email")
+                                input.main-form__input(type="text")
+                        div.main-form__box.main-form__box_width_100
+                            label.main-form__label.main-form__label_triangle(data-title="Текст обращения")
+                                textarea.main-form__input(type="text" style="resize: vertical" )
+                        button.main-form__button.button.button_transparent    
+                            icon.main-form__button-icon.icon-form-send
+                            |   Отправить сообщение

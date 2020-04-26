@@ -1,20 +1,33 @@
 .main-form {
     padding: r(79) 0;
     margin-bottom: r(99);
+    position: relative;
+    display: flex;
+    justify-content: center;
+
     .row {
         @include row-flex;
     }
 
-    .main-form__wrapper {
+    &__wrapper {
+        @include container();
+        margin: 0 r(15);
+        @include sm(margin-left, 0);
+        @include sm(margin-right, 0);
         display: flex;
         justify-content: center;
         background: $blu;
-        padding: 4.9375rem 0;
+        padding-top: 4.9375rem;
+        padding-bottom: 4.9375rem;
+        @include sm(padding-top, r(44));
+        @include sm(padding-bottom, r(44));
+        position: relative;
     }
 
     &__inner {
         @include col();
         @include size(10);
+        @include size-md(12);
         @include row-flex();
         background-color: $blu;
     }
@@ -22,76 +35,98 @@
     &__header {
         @include col-nm(12);
         margin-bottom: r(80);
+    }
 
-        h2 {
-            font-size: 48px;
-            color: $yel;
-            font-weight: 700;
+    &__contacts-wrp {
+        width: 46%;
+        @include sm(width, 100%);
+    }
+
+    &__button {
+        position: relative;
+        margin: 0 r(15);
+
+        &-icon {
+            position: absolute;
+            top: r(15);
+            left: r(-10);
+            @include sm(left, -0.025rem);
+
+            &:before {
+                font-size: r(18);
+                @include sm(font-size, 0.825rem)
+            }
         }
     }
-    &__contacts {
-        width: 46%;
+
+    &__box {
+        width: 50%;
+        padding: 0 r(15);
+        @include sm(padding, 0);
+        position: relative;
+        margin-bottom: 2.6rem;
+        @include lg(width, 100%);
+
+        &_width {
+            &_100 {
+                width: 100%;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        font-weight: 600;
+        font-size: r(16);
+        color: #ECEFF1;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #ECEFF1;
+        padding: r(18) r(2);
+        outline: none;
+        line-height: 0.9;
+        overflow: hidden;
+        position: relative;
+
+        &::-webkit-resizer {
+            display: none;
+        }
     }
 
     &__form {
         width: 54%;
+        @include sm(width, 100%);
+        display: flex;
+        flex-wrap: wrap;
+        @include xs(justify-content, center);
 
-        &-inputs {
-            display: flex;
-            cursor: pointer;
+    }
 
-            &:not(:last-child) {
-                margin-bottom: 2.6rem;
-            }
+    &__label {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+
+        &:before {
+            content: attr(data-title);
+            position: absolute;
+            top: 0.925rem;
+            @include sm(top, 1.425rem);
+            left: 0.025rem;
+            transition: all .2s linear;
+            pointer-events: none;
+            @include sm(font-size, r(14));
         }
-
-        &-label {
-            display: inline-block;
-            width: 50%;
-            margin: 0 r(15);
-            position: relative;
-
-            &:before {
-                content: attr(data-title);
-                position: absolute;
-                top: 0.925rem;
-                left: r(2);
-                transition: all .2s linear;
-                pointer-events: none;
-            }
-
-            &_large {
-                width: 100%;
-            }
-            &_triangle:after {
-                content: "\e913";
-                color: #fafafa;
-                font-family: 'icomoon' !important;
-                font-size: 12px;
-                opacity: .4;
-                position: absolute;
-                bottom: 10px;
-                right: 0;
-                pointer-events: none;
-            }
-        }
-
-        &-input {
-            width: 100%;
-            font-weight: 600;
-            font-size: r(16);
-            color: #ECEFF1;
-            background-color: transparent;
-            border: none;
-            border-bottom: 2px solid #ECEFF1;
-            padding: r(18) r(2);
-            outline: none;
-            line-height: 0.9;
-            overflow: hidden;
-            position: relative;
-            &::-webkit-resizer {
-                display: none;
-            }
+        &_triangle:after {
+            content: "\e913";
+            color: #fafafa;
+            font-family: 'icomoon' !important;
+            font-size: 12px;
+            opacity: .4;
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            pointer-events: none;
         }
     }
 
@@ -99,13 +134,20 @@
         display: flex;
         justify-content: center;
         @include col-nm(12);
+        @include sm(flex-wrap, wrap);
+    }
+    &__contact {
+        margin-bottom: r(67);
+        @include sm(margin-bottom, r(20));
     }
 }
 
-.main-form__form-label.active:before {
+.main-form__label.active:before {
     top: -0.3rem;
+    @include sm(top, r(-0.8));
     left: 0.125rem;
-    font-size: 12px;
+    font-size: r(12);
+    @include sm(font-size, r(10));
     transition: all .2s ease-out;
     pointer-events: none;
 }

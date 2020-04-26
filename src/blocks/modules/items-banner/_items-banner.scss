@@ -93,20 +93,6 @@
         @include md(align-items, center);
     }
 
-    &:after {
-        content: '';
-        width: r(24);
-        height: r(24);
-        @include xs(width, 1.2rem);
-        @include xs(height, 1.2rem);
-        position: absolute;
-        bottom: 2rem;
-        background-color: $blu;
-        transform: rotate(45deg);
-        right: -1.9rem;
-        animation: square-right .5s ease-in-out;
-        transition: .5s ease-in-out;
-    }
 }
 
 .items-banner.items-banner_hover:after {

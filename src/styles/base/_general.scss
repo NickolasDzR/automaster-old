@@ -324,8 +324,81 @@ header {
   animation: span-bottom .3s linear reverse;
 }
 
+.h2-heading {
+  color: $blu;
+  font-size: r(48);
+  font-weight: 700;
+  @include lg(font-size, r(42));
+  @include md(font-size, r(38));
+  @include sm(font-size, r(36));
+  @include xs(font-size, r(32));
+  @include sm(line-height, r(40));
+
+  &_white {
+    color: $wh;
+  }
+
+  &_yellow {
+    color: $yel;
+  }
+
+}
+
+.button {
+  font-size: r(16);
+  display: inline-block;
+  background-color: $blu;
+  color: $wh;
+  border: none;
+  font-weight: 600;
+  padding: 0.9375rem 1.75rem;
+  white-space: nowrap;
+  @include sm(font-size, 0.775rem);
+  @include sm(padding, 0.7375rem 1.55rem);
+  cursor: pointer;
+
+  &_yellow {
+    background-color: $yel;
+  }
+
+  &_transparent {
+    background-color: transparent
+  }
+}
+
+.decorate__square {
+  &:after {
+    content: '';
+    width: r(24);
+    height: r(24);
+    @include xs(width, 1.2rem);
+    @include xs(height, 1.2rem);
+    position: absolute;
+    background-color: $blu;
+    transform: rotate(45deg);
+    animation: square-right .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+
+  &_position {
+    &_banner:after {
+      bottom: 2rem;
+      right: -1.9rem;
+    }
+
+    &_form:after {
+      content: '';
+      left: r(112);
+      @include md(left, 5rem);
+      @include xs(left, r(30));
+      bottom: r(-12);
+      @include xs(bottom, -0.65rem);
+    }
+  }
+}
+
 .mb-4 {
-    margin-bottom: r(20);
+  margin-bottom: r(20);
 }
 
 .bg_primary {
@@ -343,5 +416,6 @@ header {
 .bg_light-gray {
   background-color: $lgray;
 }
+
 @import '../../blocks/modules/contacts/contacts';
 @import '../../blocks/components/components'

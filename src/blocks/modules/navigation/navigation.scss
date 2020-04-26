@@ -76,6 +76,9 @@
         display: flex;
         flex-wrap: wrap;
         @include md(display, none);
+        &__item {
+            margin-bottom: r(20);
+        }
 
         &-language {
             padding-right: r(34);
@@ -126,6 +129,9 @@
 }
 
 .contacts {
+    &__item {
+        margin-bottom: r(20);
+    }
     display: none;
     @include md(display, block);
     width: 100%;
