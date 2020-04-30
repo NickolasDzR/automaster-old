@@ -5,8 +5,8 @@
     transform: translateX(0);
 
     padding: {
-        top: 2.5rem;
-        bottom: 1rem;
+        top: r(98);
+        bottom: r(56);
     }
 
     @include sm(padding-bottom, 0);
@@ -15,13 +15,14 @@
 
     overflow: hidden;
 
-    display: flex;
     @include lg(display, block);
-    justify-content: center;
 
 
     &__wrapper {
         @include container();
+        padding-left: 0;
+        padding-right: 0;
+
         &_scroll {
             height: 100%;
             overflow-y: scroll;
@@ -30,7 +31,7 @@
             margin: 0 r(30) 0 r(15);
             @include sm(margin, 0 r(15) 0 r(15));
             padding-right: 10px;
-            @include sm(padding-right, 0);  
+            @include sm(padding-right, 0);
 
             &::-webkit-scrollbar {
                 width: 8px;
@@ -76,7 +77,7 @@
         @include col-nm(3);
         @include col-nm-lg(6);
         @include col-nm-sm(12);
-        border-bottom: 1px solid rgba($wh, .2);
+        // border-bottom: 1px solid rgba($wh, .2);
         text-align: left;
         padding: r(35);
         padding-right: 4.2875rem;
@@ -91,34 +92,41 @@
         @include lg(height, 33.3333%);
     }
 
-    &__item:nth-last-child(-n+4) {
-        border-bottom: none;
-        @include lg(border-bottom, 1px solid rgba($wh, .1));
-    }
+    &__item {
 
-    &__item:nth-last-child(-n+4) {
-        @include lg(border-bottom, none);
-        @include sm(border-bottom, 1px solid rgba($wh, .1));
-    }
-    &__item:nth-last-child(n+3) {
-        @include lg(border-bottom, 1px solid rgba($wh, .1));
-        @include sm(border-bottom, none);
-    }
-    &__item:nth-last-child(n+1) {
-        @include sm(border-bottom, 1px solid rgba($wh, .1));
-    }
+        &_border {
+            &_static:not(:nth-last-child(-n+4)) {
+                border-bottom: 1px solid rgba($wh, .1);
+                @include lg(border-bottom, none);
+            }
 
-    &__item:nth-last-child(-n+1) {
-        @include sm(border-bottom, none)
-    }
+            &_static:not(:nth-last-child(-n+2)) {
+                @include lg(border-bottom, 1px solid rgba($wh, .1));
+                @include sm(border-bottom, none);
+            }
 
-    &__item:not(:nth-child(4n)) {
-        border-right: 1px solid rgba($wh, .1);
-        @include lg(border-right, none);
-    }
-    &__item:not(:nth-child(2n)) {
-        @include lg(border-right, 1px solid rgba($wh, .1));
-        @include sm(border-right, 0);
+            &_static:not(:nth-last-child(-n+1)) {
+                @include sm(border-bottom, 1px solid rgba($wh, .1));
+            }
+
+            &_static:not(:nth-child(4n)) {
+                border-right: 1px solid rgba($wh, .1);
+                @include lg(border-right, none);
+            }
+
+            &_static:not(:nth-child(2n)) {
+                @include lg(border-right, 1px solid rgba($wh, .1));
+                @include sm(border-right, none);
+            }
+
+            &_slider:not(:nth-last-child(-n+4)) {
+                border-bottom: 1px solid rgba($wh, .1);
+            }
+
+            &_slider:not(:nth-child(4n)) {
+                border-right: 1px solid rgba($wh, .1);
+            }
+        }
     }
 
     &__desc {
@@ -280,19 +288,16 @@
         @include md(display, flex);
         @include md(flex-wrap, wrap);
         @include md(margin-bottom, r(37));
+    }
 
-        h2 {
-            @include col();
-            @include size(5);
-            font-size: 2.9rem;
-            color: $wh;
-            line-height: r(56);
-            @include col-nm-md(12);
-            @include md(margin-bottom, r(30));
-            @include md(font-size, 2.8rem);
-            @include xs(font-size, 2rem);
-            @include xs(line-height, 40px);
-        }
+    &__heading {
+        @include col();
+        @include size(5);
+        @include col-nm-md(12);
+        @include md(margin-bottom, r(30));
+        @include md(font-size, 2.8rem);
+        @include xs(font-size, 2rem);
+        @include xs(line-height, 40px);
     }
 
     &__sign {
@@ -355,6 +360,9 @@
                 @include xs(line-height, r(10));
             }
         }
+    }
+    &_z-index {
+        z-index: 8;
     }
 }
 

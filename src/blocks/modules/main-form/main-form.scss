@@ -2,8 +2,9 @@
     padding: r(79) 0;
     margin-bottom: r(99);
     position: relative;
-    display: flex;
-    justify-content: center;
+    margin: 0 r(15);
+    @include sm(margin-left, 0);
+    @include sm(margin-right, 0);
 
     .row {
         @include row-flex;
@@ -11,9 +12,7 @@
 
     &__wrapper {
         @include container();
-        margin: 0 r(15);
-        @include sm(margin-left, 0);
-        @include sm(margin-right, 0);
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         background: $blu;
@@ -43,6 +42,7 @@
     }
 
     &__button {
+        overflow: visible;
         position: relative;
         margin: 0 r(15);
 
@@ -87,6 +87,7 @@
         line-height: 0.9;
         overflow: hidden;
         position: relative;
+        min-height: r(50);
 
         &::-webkit-resizer {
             display: none;
@@ -117,6 +118,7 @@
             pointer-events: none;
             @include sm(font-size, r(14));
         }
+
         &_triangle:after {
             content: "\e913";
             color: #fafafa;
@@ -136,6 +138,7 @@
         @include col-nm(12);
         @include sm(flex-wrap, wrap);
     }
+
     &__contact {
         margin-bottom: r(67);
         @include sm(margin-bottom, r(20));

@@ -8,7 +8,10 @@
     @include sm(padding-bottom, 5rem);
 
     &__wrapper {
-        @include row-flex;
+        @include my-container();
+    }
+    &__inner {
+        @include row-flex();
         justify-content: space-between;
         align-items: flex-start;
     }

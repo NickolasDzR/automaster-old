@@ -4,5 +4,7 @@ mixin main-slider-bg()
     .main-slider-bg.swiper-container
         .swiper-wrapper
             - for(var i = 0; i < amountSlideBg; i += 1) {
-                div(class=classes style="background-image: url('img/main-slider-bg/slide-image-" + i + ".webp')")
+                div(class=classes data-background="main-slider-bg/slide-image-" + i)
             - }
+
+            //- style="background-image: url('img/main-slider-bg/slide-image-" + i + ".webp')"

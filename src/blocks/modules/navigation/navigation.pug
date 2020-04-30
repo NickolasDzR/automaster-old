@@ -7,28 +7,29 @@ mixin navigation()
     +hamburger
     nav.nav(role="navigation")
         .nav__wrapper
-            .nav__inner
+            div(class= catalog ? 'nav__inner nav__inner_color_blue' : 'nav__inner')
                 .nav__menu
                     ul.nav__list
+                        li.nav__list-item.nav__list_hover
+                            a.nav__link(href="")  Решения
                         li.nav__list-item
-                            a.nav__list-link(href="")  Решения
-                        li.nav__list-item
-                            a.nav__list-link(href="")  Портфолио
+                            a.nav__link.nav__list_hover(href="")  Портфолио
                         li.nav__list-item.nav__menu_active
-                            a.nav__list-link(href="")  О нас
+                            a.nav__link.nav__list_hover(href="")  О нас
                 .nav__contacts
-                    .nav__contacts-language
-                        ul
-                            li
-                                a(href="")  O'ZB
-                            li
-                                a.nav__contacts-language_active(href="")  Рус
-                            li
-                                a(href="")  Eng
-                    .nav__contacts-number
-                        ul
-                            li  998 71 276 64 98
-                            li  Колл-центр
+                    .nav__language
+                        ul.nav__list.nav__language_list
+                            li.nav__list-item.nav__language_item
+                                a.nav__link.nav__language_link(href="")  O'ZB
+                            li.nav__list-item.nav__language_item
+                                a.nav__link.nav__language_link.nav__language_active(href="")  Рус
+                            li.nav__list-item.nav__language_item
+                                a.nav__link.nav__language_link(href="")  Eng
+                    if !catalog
+                        .nav__number
+                            ul.nav__list.nav__list_block.nav__number_list
+                                li.nav__list-item.nav__list_block.nav__number_item 998 71 276 64 98
+                                li.nav__list-item.nav__list_block.nav__number_item  Колл-центр
         .contacts
             +contacts('icon-phone', 'Номер телефона', '99 777 55 66  —  71 256 55 66', 'contacts__item')
             +contacts('icon-form-mail', 'Email адрес', 'info@automaster.uz', 'contacts__item')

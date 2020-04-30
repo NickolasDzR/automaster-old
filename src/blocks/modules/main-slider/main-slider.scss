@@ -1,4 +1,7 @@
 .main-slider {
+    &__wrapper {
+        @include my-container();
+    }
     @include sm(margin-top, r(144));
     .swiper-slide-active {
         opacity: 1;

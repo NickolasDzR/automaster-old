@@ -9,7 +9,7 @@
 
     &__inner {
         @include row-flex();
-        @include lg(flex-wrap, nowrap);
+        flex-wrap: nowrap;
         @include lg(margin-left, 0);
         @include lg(margin-right, 0);
     }

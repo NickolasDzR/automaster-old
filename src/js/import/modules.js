@@ -1,3 +1,4 @@
+import "%modules%/main-slider-bg/main-slider-bg";
 import "%modules%/items-banner/items-banner";
 import "%modules%/items-slide/items-slide";
 import "%modules%/solutions/solutions";

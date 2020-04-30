@@ -10,6 +10,14 @@
   @include xl(max-width, r(1110));
 }
 
+@mixin my-container() {
+  @include container();
+  @include sm(max-width, r(510));
+  @include md(max-width, r(690));
+  @include lg(max-width, r(930));
+  @include xl(max-width, r(1110));
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -328,6 +336,8 @@ header {
   color: $blu;
   font-size: r(48);
   font-weight: 700;
+  line-height: 56px;
+  @include sm(line-height, 40px);
   @include lg(font-size, r(42));
   @include md(font-size, r(38));
   @include sm(font-size, r(36));
@@ -364,9 +374,13 @@ header {
   &_transparent {
     background-color: transparent
   }
+
+  &_white {
+    color: $wh;
+  }
 }
 
-.decorate__square {
+.cube {
   &:after {
     content: '';
     width: r(24);
