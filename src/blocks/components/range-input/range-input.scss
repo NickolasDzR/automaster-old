@@ -1,0 +1,54 @@
+.range-input {
+    position: relative;
+    margin-bottom: 300px;
+
+    &__wrp {
+        position: relative;
+    }
+
+    &__line {
+        width: 100%;
+        height: r(2);
+        top: r(0);
+        position: absolute;
+        background-color: $blu;
+    }
+
+    &__button {
+        width: r(12);
+        height: r(12);
+        background-color: $blu;
+        position: absolute;
+        top: r(-5);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    &__title {
+        margin-bottom: r(13);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__label {
+        width: inherit;
+        &:before {
+            position: relative;
+            top: inherit;
+            left: inherit;
+        }
+    }
+
+    .range-input__span {
+        &:first-child {
+            margin-right: r(3);
+        }
+        font: {
+            weight: 600;
+            size: r(12);
+        }
+
+        color: #7c8d9c
+    }
+}

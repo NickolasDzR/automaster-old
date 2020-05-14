@@ -1,0 +1,18 @@
+.select-form {
+    &__text {
+        &_blue {
+            color: $blu;
+            font: {
+                weight: 500;
+            }
+        }
+    }
+    &__border {
+        border-bottom: 2px solid #ABB6BF;
+    }
+    &__padding {
+        &_0 {
+            padding: 0;
+        }
+    }
+}

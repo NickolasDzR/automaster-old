@@ -1,0 +1,10 @@
+mixin dropdown(heading, ar, itemClass, linkClass, labelClass)
+    .dropdown
+        p.dropdown__paragraph.select-form__text_blue.select-form__border    #{heading}
+        ul.dropdown__list
+            each num, item in ar
+                li.dropdown__item(class= itemClass)
+                    a.dropdown__link(class=linkClass, data-title= num)= item
+                    label.dropdown__label(class= labelClass)
+                        input.dropdown__input(type="checkbox")
+                        span.dropdown__span

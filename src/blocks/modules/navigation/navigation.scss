@@ -35,7 +35,7 @@
         @include size(3);
         @include size-lg(4);
         @include size-md(12);
-        @include md(padding-left, 0.60625rem);
+        @include md(padding-left, 1.30625rem);
 
         &_active:before {
             content: '';
@@ -124,7 +124,7 @@
         @include md(display, none);
 
         &_link {
-            padding: 0 r(10);
+            padding-left: r(20);
         }
 
         &_active {
@@ -139,17 +139,21 @@
             display: inline-block;
             list-style: none;
         }
+        &_catalog {
+            padding-right: 0;
+        }
     }
 
     &__number {
         &_item:nth-child(1) {
             font-size: r(20);
-            @include md(font-size, 0.75rem)
+            @include lg(font-size, 0.95rem);
+            @include md(font-size, 0.75rem);
         }
 
         &_item:nth-child(2) {
             font-size: r(12);
-            @include md(font-size, 0.75rem)
+            @include md(font-size, 0.75rem);
         }
 
     }

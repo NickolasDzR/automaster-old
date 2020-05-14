@@ -1,0 +1,30 @@
+.products {
+    &__wrapper {
+        @include my-container();
+    }
+    &__inner {
+        @include row-flex();
+    }
+    &__nav {
+        @include col();
+        @include size(5);
+    }
+    &__items {
+        @include col();
+        @include size(7);
+    }
+    &__link {
+        font-size: r(24);
+        color: $blu;
+        opacity: 0.5;
+        font-weight: 700;
+        margin-bottom: r(10);
+    }
+    &__paragraph {
+        font-size: r(12);
+        color: $bl;
+    }
+    &__images {
+        text-align: right;
+    }
+}

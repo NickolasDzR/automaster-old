@@ -1,0 +1,15 @@
+mixin products()
+    include ../select-form/select-form.pug
+    section.products
+        .products__wrapper
+            .products__inner
+                .products__nav
+                    .products__title
+                        a.products__link    Назад
+                        h2.h2-heading   Шиномонтажные станки 
+                        p.products__paragraph
+                            |   Шинные машины известных производителей. Стенды сортировки колес-полуавтоматические (отвод верхней монтажной колонны с одной стороны), автоматические (отвод верхней монтажной колонны пневматически назад) и роботизированные.
+                        .products__images
+                            img(src="img/sprites/sprite.svg#fy-tech", alt="фирмы" style="width:61px; height:62px")
+                        +select-form
+                .products__items

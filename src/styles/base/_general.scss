@@ -309,13 +309,18 @@ body {
   @include xs(padding-left, r(40));
 }
 
-header {
+.header {
   position: relative;
   height: 100vh;
   min-height: r(576);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  &_height {
+    height: initial;
+    min-height: initial;
+  }
 }
 
 .square {

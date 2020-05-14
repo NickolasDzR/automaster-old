@@ -1,0 +1,8 @@
+mixin select-form()
+    include ../../components/label/label.pug
+    include ../../components/dropdown/dropdown.pug
+    include ../../components/range-input/range-input.pug
+    form.select-form
+        +label(false, 'select-form__padding_0', 'select-form__text_blue', 'Поиск', 'select-form__border', 'text')
+        +dropdown('Производитель', {'Sivik': 5, 'Unite': 12, 'FY-TECH': 8, 'ROAD BUCK': 6}, '', 'select-form__text_blue')
+        +range-input

@@ -1,5 +1,6 @@
 mixin main-form()
     include ../contacts/contacts.pug
+    include ../../components/label/label.pug
     section.main-form
         .main-form__wrapper.cube.cube_position_form
             .main-form__inner
@@ -9,15 +10,9 @@ mixin main-form()
                         +contacts('icon-phone', 'Номер телефона', '99 777 55 66  —  71 256 55 66', 'main-form__contact')
                         +contacts('icon-form-mail', 'Email адрес', 'info@automaster.uz', 'main-form__contact')
                     form.main-form__form
-                        div.main-form__box
-                            label.main-form__label(data-title="Полное имя")
-                                input.main-form__input(type="text")
-                        div.main-form__box
-                            label.main-form__label(data-title="Email")
-                                input.main-form__input(type="text")
-                        div.main-form__box.main-form__box_width_100
-                            label.main-form__label.main-form__label_triangle(data-title="Текст обращения")
-                                textarea.main-form__input(type="text" style="resize: vertical" )
-                        button.main-form__button.button.button_transparent    
+                        +label(false, 'label-box_width_50', '', 'Ваше имя', '', 'text')
+                        +label(false, 'label-box_width_50', '', 'Ваше имя', '', 'text')
+                        +label(true, '', 'label_triangle', 'Ваше имя', '', 'text')
+                        button.main-form__button.button.button_transparent
                             icon.main-form__button-icon.icon-form-send
                             |   Отправить сообщение

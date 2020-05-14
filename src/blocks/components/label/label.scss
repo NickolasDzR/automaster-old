@@ -1,0 +1,77 @@
+.label-box {
+    width: 100%;
+    padding: 0 r(15);
+    @include sm(padding, 0);
+    position: relative;
+    margin-bottom: 2.6rem;
+    @include lg(width, 100%);
+
+    &_width {
+        &_100 {
+            width: 100%;
+        }
+
+        &_50 {
+            width: 50%;
+        }
+    }
+}
+
+.input {
+    width: 100%;
+    font-weight: 600;
+    font-size: r(16);
+    color: #ECEFF1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ECEFF1;
+    padding: r(18) r(2);
+    outline: none;
+    line-height: 0.9;
+    overflow: hidden;
+    position: relative;
+    min-height: r(50);
+
+    &::-webkit-resizer {
+        display: none;
+    }
+}
+
+.label {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+
+    &:before {
+        content: attr(data-title);
+        position: absolute;
+        top: 0.925rem;
+        @include sm(top, 1.425rem);
+        left: 0.025rem;
+        transition: all .2s linear;
+        pointer-events: none;
+        @include sm(font-size, r(14));
+    }
+
+    &_triangle:after {
+        content: "\e913";
+        color: #fafafa;
+        font-family: 'icomoon' !important;
+        font-size: 12px;
+        opacity: .4;
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        pointer-events: none;
+    }
+}
+
+.label.active:before {
+    top: -0.3rem;
+    @include sm(top, r(-0.8));
+    left: 0.125rem;
+    font-size: r(12);
+    @include sm(font-size, r(10));
+    transition: all .2s ease-out;
+    pointer-events: none;
+}

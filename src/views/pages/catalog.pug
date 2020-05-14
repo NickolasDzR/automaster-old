@@ -3,19 +3,24 @@ include ../helpers/mixins
 include ../../blocks/modules/items-banner/items-banner.pug
 include ../../blocks/modules/items-slide/items-slide.pug
 include ../../blocks/modules/navigation/navigation.pug
+include ../../blocks/modules/broadcrumps/broadcrumps.pug
+include ../../blocks/modules/products/products.pug
 
 block variables
 	- const title = "gulp-pug-starter"
 	- const catalog = true;
+	- const nestedBroadCrumps = 1;
 
 block content
 	.site-container 
-		header
+		header.header.header_height
 			+items-banner
 			+items-slide(true)
 			+meta-page
 			+navigation
 		main
+			+broadcrumps(['Главная', 'Каталог товаров', 'Оборудование для заправки кондиционеров'], nestedBroadCrumps)
+			+products
 		footer
 
 

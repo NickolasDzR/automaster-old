@@ -1,0 +1,6 @@
+mixin broadcrumps(bgItems, nestedBroadCrumps)
+    section.broadcrumps
+        .broadcrumps__wrapper
+            .broadcrumps__box
+                - for(var i = 0; i < bgItems.length; i += 1)
+                    a(class= (i === nestedBroadCrumps) ? "broadcrumps__link broadcrumps__link_active" : "broadcrumps__link")= bgItems[i]

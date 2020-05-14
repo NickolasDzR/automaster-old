@@ -1,0 +1,9 @@
+mixin label(attr, boxClass, labelClass, data, inputClass, type)
+    if attr === true
+        .label-box(class= boxClass)
+            label.label(class= labelClass, data-title= data)
+                textarea.input(class= inputClass, type= type)
+    else
+        .label-box(class= boxClass)
+            label.label(class= labelClass, data-title= data)
+                input.input(class= inputClass, type= type)
